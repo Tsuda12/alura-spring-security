@@ -16,12 +16,12 @@ public class SecurityConfig {
     public UserDetailsService usersData() {
         UserDetails user1 = User.builder()
                 .username("felipe.tsuda@gmail.com")
-                .password("admin")
+                .password("{noop}admin")
                 .build();
 
         UserDetails user2 = User.builder()
                 .username("isabela.rocha@gmail.com")
-                .password("admin")
+                .password("{noop}admin")
                 .build();
 
         return new InMemoryUserDetailsManager(user1, user2);
