@@ -41,6 +41,8 @@ public class SecurityConfig {
                         .permitAll())
                 .logout(logout -> logout.logoutSuccessUrl("/login?logout")
                         .permitAll())
+                .rememberMe(rememberMe -> rememberMe.key("rememberMe")
+                        .alwaysRemember(true)) // .tokenValiditySeconds() determina quanto tempo o rememberMe irá durar em segundos
                 .build();
     }
 }
