@@ -15,20 +15,21 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Bean
-    public UserDetailsService usersData() {
-        UserDetails user1 = User.builder()
-                .username("felipe.tsuda@gmail.com")
-                .password("{noop}admin")
-                .build();
-
-        UserDetails user2 = User.builder()
-                .username("isabela.rocha@gmail.com")
-                .password("{noop}admin")
-                .build();
-
-        return new InMemoryUserDetailsManager(user1, user2);
-    }
+//    Para salvar em memória
+//    @Bean
+//    public UserDetailsService usersData() {
+//        UserDetails user1 = User.builder()
+//                .username("felipe.tsuda@gmail.com")
+//                .password("{noop}admin")
+//                .build();
+//
+//        UserDetails user2 = User.builder()
+//                .username("isabela.rocha@gmail.com")
+//                .password("{noop}admin")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(user1, user2);
+//    }
 
     @Bean
     public SecurityFilterChain securityFilter(HttpSecurity http) throws Exception {
